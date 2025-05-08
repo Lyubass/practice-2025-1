@@ -1,0 +1,215 @@
+/* Общие стили */
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Учитываем padding и border в размерах элементов */
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex; /* Используем Flexbox для всей страницы */
+    flex-direction: column; /* Делаем страницу вертикальной */
+    min-height: 100vh; /* Минимальная высота страницы равна высоте окна */
+  }
+  
+  main {
+    flex: 1; /* Основное содержимое растягивается, чтобы заполнить пространство */
+    padding: 2rem;
+  }
+  
+  footer {
+    background-color: #474e77;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  header {
+    background-color: #474e77;
+    color: #fff;
+    padding: 1rem 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  /* Стили для двух колонок */
+.team-columns {
+    margin: 30px auto;
+    max-width: 900px;
+    display: flex;
+    gap: 150px; /* Расстояние между колонками */
+    justify-content: space-between;
+  }
+  
+  .team-group {
+    width: 100px;
+    max-width: 900px;
+    flex: 2; /* Каждая колонка занимает равное пространство */
+    padding: 3rem;
+    border: 1px solid #a4acd6;
+    border-radius: 30px;
+    background-color: #a4acd634;
+  }
+  
+  .member {
+    margin-bottom: 1rem;
+  }
+  
+  .member h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .member p {
+    margin: 0.5rem 0 0;
+    color: #474e77;
+  }
+
+  /*стиль для таблицы в журнале*/
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 3px #a4acd634;
+  }
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #a4acd634;
+  }
+  th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #474e77;
+  }
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  .duration {
+    text-align: center;
+  }
+  .dates {
+    white-space: nowrap;
+    text-align: center;
+  }
+  /*стиль для главной страницы*/
+  .content-wrapper {
+    display: flex;
+    margin: 30px auto; /* Центрирование всего блока */
+    gap: 220px; /* Увеличенное расстояние между кнопками и картинкой */
+    max-width: 1000px; /* Ограничение максимальной ширины */
+    justify-content: center;
+    align-items: flex-start; /* Выравнивание элементов по центру по вертикали */ /* Центрирование содержимого */
+  }
+  .side-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Увеличенное расстояние между кнопками */
+    width: 200px;
+    margin-top: 55px; /* Поднимаем кнопки вверх */
+  }
+  .side-button {
+    padding: 12px;
+    background-color: #f0f0f0;
+    border: 1px solid #a4acd634;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #474e77;
+    transition: all 0.3s ease;
+  }
+  .side-button:hover {
+    background-color: #a4acd634;
+    transform: translateX(5px);
+  }
+  .image-container {
+    width: 320px;
+    align-items: center; /* Центрирование изображения и подписи */
+  }
+  .centered-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #a4acd634;
+    box-shadow: 0 0 10px #a4acd634;
+  }
+  .image-caption {
+    font-style: Arial;
+    color: #474e77;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /*стиль для ссылок*/
+  .resources-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 40px 0;
+  }
+  .resources-list li {
+    margin-bottom: 25px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .resources-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  .resource-link {
+    display: inline-block;
+    font-size: 1.2em;
+    color: #474e77;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    background-color: #e9ecef;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+  }
+  .resource-link:hover {
+    background-color: #d0d6e0;
+    color: #2c315d;
+    text-decoration: underline;
+  }
+  .resource-description {
+    font-size: 1em;
+    color: #555;
+  }
+
+
+  .highlight {
+    background-color: #f0f4ff;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .tasks-container {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border-left: 4px solid #a4acd6;
+  }
+  .tasks-container h2 {
+    color: #474e77;
+    margin-top: 0;
+    font-size: 1.4rem;
+  }
