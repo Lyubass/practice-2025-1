@@ -16,3 +16,12 @@
 
 3. Так же нам понадобится API-запрос для получения данных о погоде по названию города, он находится в разделе API - Built-in API request by city name (копируем первый из 3-х):
  ![Компьютер](img/API.png)
+
+### Шаг 3: Переходим к написанию кода
+1. Устанавливаем необходимые библиотеки через терминал:
+   ```bash
+   pip install pyTelegramBotAPI
+   ```bash
+   pip install requests
+Библиотека `pyTelegramBotAPI` необходима для работы с Telegram API,а  `requests` для HTTP-запросов к OpenWeatherMap 
+2. 
