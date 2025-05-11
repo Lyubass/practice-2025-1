@@ -28,4 +28,6 @@
    ```bash
    pip install requests
 Библиотека `requests` для HTTP-запросов к OpenWeatherMap 
+
+Библиотека `requests` для HTTP-запросов к OpenWeatherMap 
 2.
