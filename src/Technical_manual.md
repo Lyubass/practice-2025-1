@@ -21,7 +21,8 @@
 1. Устанавливаем необходимые библиотеки через терминал:
    ```bash
    pip install pyTelegramBotAPI
-   ```bash
-   pip install requests
+
+```bash
+pip install requests
 Библиотека `pyTelegramBotAPI` необходима для работы с Telegram API,а  `requests` для HTTP-запросов к OpenWeatherMap 
 2. 
