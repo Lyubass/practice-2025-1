@@ -96,3 +96,5 @@ bot.polling()
 python bot.py
 ```   
 2. Переходим в Telegram и проверяем работу бота:
+
+ ![Компьютер](img/bot.png)
