@@ -26,8 +26,7 @@
 Библиотека `pyTelegramBotAPI` необходима для работы с Telegram API
 
    ```bash
-   pip install requests
-Библиотека `requests` для HTTP-запросов к OpenWeatherMap 
+   pip install pyTelegramBotAPI
 
 Библиотека `requests` для HTTP-запросов к OpenWeatherMap 
-2.
+
