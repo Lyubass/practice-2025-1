@@ -9,3 +9,7 @@
    python -m venv venv
    source venv/bin/activate  # для Linux/Mac
    venv\Scripts\activate     # для Windows
+### Шаг 2: Создание бота в Telegram
+1. Откройте Telegram и введите в поисковой строке @BotFather
+2. Используйте команду /newbot для создания нового бота
+3. Запишите полученный токен (он понадобится позже) 
