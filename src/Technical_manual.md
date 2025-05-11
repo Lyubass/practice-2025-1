@@ -24,9 +24,9 @@
 ### Шаг 3: Переходим к написанию кода
 
 1. Устанавливаем необходимые библиотеки через терминал:
-   ```bash
-   pip install pyTelegramBotAPI
-   ```
+```bash
+pip install pyTelegramBotAP
+```
 Библиотека `pyTelegramBotAPI` необходима для работы с Telegram API
 
 
@@ -35,17 +35,54 @@
    ```
 Библиотека `requests` нужна для HTTP-запросов к OpenWeatherMap
 
-2. Подключаем наши библиотеки, в качестве переменной `bot` берем полученный токен в BotFather, пишем функцию для команды `/start`:
+2. Сам код с комментариями:
 ```bash
-   import telebot
+#подключаем библиотеки
+import telebot
 import requests
 
-bot = telebot.TeleBot("7615771732:AAEys1OYG2bJmw4l1mq6hW_y5KTy3EYENhE")
+#Создаем объект бота, передавая уникальный токен, этот токен связывает ваш код с конкретным ботом в Telegram
+bot = telebot.TeleBot("7615771732:AAEys1OYG2bJmw4l1mq6hW_y5KTy3EYENhE") 
 
 @bot.message_handler(commands=['start'])
 def ask_city(message):
     bot.send_message(message.from_user.id, 'Введите название города, для которого хотите узнать погоду.')
+
+@bot.message_handler(content_types=['text'])
+def get_weather(message):
+    city = message.text
+    api_key = 'e0ea790c30465c6d097b7b535681ad28'
+    url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&lang=ru&appid={api_key}' # Создаём ссылку для запроса погоды
+
+#Получаем данные погоды:    
+    try:
+        weather_data = requests.get(url) # Отправляем запрос к API погоды
+        weather_data.raise_for_status()
+        weather_data = weather_data.json() # Преобразуем ответ в удобный формат
+
+  #Проверяем, найден ли город:  
+        if weather_data.get('cod') != 200:
+            bot.send_message(message.from_user.id, 'Город не найден. Пожалуйста, попробуйте снова.')
+            return
+
+    #Если город найден - показываем погоду:  
+        temperature = round(weather_data['main']['temp'])
+        temperature_feels = round(weather_data['main']['feels_like'])
+
+    #Формируем ответы: 
+        w_now = f'Сейчас в городе {city} {temperature} °C'
+        w_feels = f'Ощущается как {temperature_feels} °C'
+
+    # Отправляем пользователю:
+        bot.send_message(message.from_user.id, w_now)
+        bot.send_message(message.from_user.id, w_feels)
+
+# Обрабатываем возможные ошибки:
+    except requests.exceptions.RequestException as e:
+        bot.send_message(message.from_user.id, 'Произошла ошибка при получении данных о погоде: ' + str(e))
+
+bot.polling()
    ```
-3.
+3. Получаем город от пользователя
 
 
