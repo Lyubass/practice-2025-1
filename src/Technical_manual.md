@@ -37,21 +37,23 @@ pip install pyTelegramBotAP
 
 2. Сам код с комментариями:
 ```bash
-#подключаем библиотеки
+#Подключаем библиотеки
 import telebot
 import requests
 
-#Создаем объект бота, передавая уникальный токен, этот токен связывает ваш код с конкретным ботом в Telegram
+#Создаем объект бота, передавая уникальный токен полученый в BotFather, этот токен связывает ваш код с конкретным ботом в Telegram
 bot = telebot.TeleBot("7615771732:AAEys1OYG2bJmw4l1mq6hW_y5KTy3EYENhE") 
 
+# Пишем функцию для комнды /start:
 @bot.message_handler(commands=['start'])
 def ask_city(message):
     bot.send_message(message.from_user.id, 'Введите название города, для которого хотите узнать погоду.')
 
+# Получаем город от пользователя, формируем запрос к погодному API:
 @bot.message_handler(content_types=['text'])
 def get_weather(message):
     city = message.text
-    api_key = 'e0ea790c30465c6d097b7b535681ad28'
+    api_key = 'e0ea790c30465c6d097b7b535681ad28' # API ключ из OpenWeatherMap
     url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&lang=ru&appid={api_key}' # Создаём ссылку для запроса погоды
 
 #Получаем данные погоды:    
@@ -83,6 +85,5 @@ def get_weather(message):
 
 bot.polling()
    ```
-3. Получаем город от пользователя
 
 
