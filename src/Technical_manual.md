@@ -1,7 +1,7 @@
 
 ## Техническое руководство по созданию бота
 
-Ссылка на [видео презентацию бота]https://disk.yandex.ru/d/kf2JWbgKHtjumg
+Ссылка на видео презентацию бота - https://disk.yandex.ru/d/kf2JWbgKHtjumg
 ### Шаг 1: Создание бота в Telegram
 
 1. Откройте Telegram и введите в поисковой строке @BotFather
